@@ -14,6 +14,7 @@ export default defineComponent({
 
     function addFunc () {
       todos.value.push(addInput.value)
+      addInput.value = ''
     }
 
     function delFunc (index: number) {
