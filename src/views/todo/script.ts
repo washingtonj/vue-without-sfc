@@ -1,3 +1,4 @@
+/* eslint-disable brace-style */
 import { defineComponent, ref } from 'vue'
 import TodoItem from '@/components/todoItem/index.vue'
 
@@ -13,8 +14,15 @@ export default defineComponent({
     const addInput = ref<string>('')
 
     function addFunc () {
-      todos.value.push(addInput.value)
-      addInput.value = ''
+      const inputIsEmpty = !addInput.value.length
+
+      if (inputIsEmpty) {
+        alert('Empty value is not accepted')
+      }
+      else {
+        todos.value.push(addInput.value)
+        addInput.value = ''
+      }
     }
 
     function delFunc (index: number) {
@@ -22,7 +30,8 @@ export default defineComponent({
     }
 
     function updateFunc (index: number, value: string) {
-      todos.value = todos.value.map((item, idx) => idx === index ? value : item)
+      const updateTodos = todos.value.map((item, idx) => idx === index ? value : item)
+      todos.value = updateTodos
     }
 
     return {

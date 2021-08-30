@@ -5,6 +5,13 @@
   flex-direction: column;
 }
 
+.todo-app * {
+  margin: 0;
+  padding: 0;
+  box-sizing: content-box;
+
+}
+
 .todo-app__items {
   margin: 0;
   padding: 0;
