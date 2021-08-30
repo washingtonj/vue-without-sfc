@@ -1,45 +1,47 @@
 /* eslint-disable brace-style */
 import { defineComponent, ref } from 'vue'
-import TodoItem from '@/components/todoItem/index.vue'
+import * as Icons from '@/assets/icons'
+
+import TodoItem from '@/components/TodoItem/index.vue'
+import TodoInput from '@/components/TodoInput/index.vue'
+import TodoContainer from '@/components/TodoContainer/index.vue'
 
 export default defineComponent({
   name: 'TodoApp',
 
   components: {
-    TodoItem
+    TodoItem,
+    TodoInput,
+    TodoContainer,
+    DarkIcon: Icons.Moon,
+    LightIcon: Icons.Sun
   },
 
   setup () {
     const todos = ref<string[]>([])
-    const addInput = ref<string>('')
 
-    function addFunc () {
-      const inputIsEmpty = !addInput.value.length
+    function add (value: string) {
+      const inputIsEmpty = !value.length
 
-      if (inputIsEmpty) {
-        alert('Empty value is not accepted')
-      }
-      else {
-        todos.value.push(addInput.value)
-        addInput.value = ''
-      }
+      inputIsEmpty
+        ? alert('Empty value is not accepted')
+        : todos.value.push(value)
     }
 
-    function delFunc (index: number) {
+    function remove (index: number) {
       todos.value.splice(index, 1)
     }
 
-    function updateFunc (index: number, value: string) {
+    function update (index: number, value: string) {
       const updateTodos = todos.value.map((item, idx) => idx === index ? value : item)
       todos.value = updateTodos
     }
 
     return {
       todos,
-      addFunc,
-      addInput,
-      delFunc,
-      updateFunc
+      add,
+      remove,
+      update
     }
   }
 })

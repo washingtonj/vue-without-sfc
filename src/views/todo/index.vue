@@ -1,22 +1,22 @@
 <template>
   <section class="todo-app">
-    <h1 class="todo-app__name">WSFC Todo</h1>
-
     <div class="todo-app__container">
-      <div class="todo-app__input">
-        <input type="search" v-model.trim="addInput" />
-        <button @click="addFunc">+</button>
+      <div class="todo-app__name">
+        <h1>TODO</h1>
+        <dark-icon />
       </div>
 
-      <ul class="todo-app__items">
+      <todo-input @submit="add" />
+
+      <todo-container>
         <todo-item
           v-for="(todo, idx) in todos"
           :key="idx"
           :value="todo"
-          @update="updateFunc(idx, $event)"
-          @remove="delFunc(idx)"
+          @update="update(idx, $event)"
+          @remove="remove(idx)"
         />
-      </ul>
+      </todo-container>
     </div>
   </section>
 </template>

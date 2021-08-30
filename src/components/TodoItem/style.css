@@ -1,0 +1,19 @@
+.todo-app__items li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: fit-content;
+  padding: 1rem;
+  border-bottom: 1px solid var(--blue-200);
+}
+
+.todo-app__items li p {
+  margin-right: .85rem;
+  color: var(--blue-400);
+}
+
+.todo-app__items li button {
+  height: fit-content;
+  font-size: 0.55rem;
+}

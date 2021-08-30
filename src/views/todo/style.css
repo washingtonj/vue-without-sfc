@@ -1,35 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap');
+
+:root {
+  --primary: hsl(220, 98%, 61%);
+  --check: linear-gradient hsl(192, 100%, 67%) to hsl(280, 87%, 65%);
+  --gray: hsl(0, 0%, 98%);
+  
+  /* Light Theme */
+  --blue-100: hsl(236, 33%, 92%);
+  --blue-200: hsl(233, 11%, 84%);
+  --blue-300: hsl(236, 9%, 61%);
+  --blue-400: hsl(235, 19%, 35%);
+
+  --mobile: 375px;
+  --desktop: 1440px;
+
+  font-size: 18px;
+
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+} 
+
+body {
+  background-color: var(--gray);
+}
+
+button {
+  cursor: pointer;
+}
+
 .todo-app {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  font-family: 'Josefin Sans', sans-serif;
+
+  background-image: url('../../assets/images/bg-desktop-light.jpg');
+  background-size: 100%;
+  background-repeat: no-repeat;
 }
 
-.todo-app * {
-  margin: 0;
-  padding: 0;
-  box-sizing: content-box;
-
+.todo-app__container {
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+  padding-top: 80px;
 }
 
-.todo-app__items {
-  margin: 0;
-  padding: 0;
-}
-
-.todo-app__items li {
+.todo-app__name {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 100%;
-  height: fit-content;
+  color: white;
+  text-transform: uppercase;
+  margin-bottom: 2rem;
 }
 
-.todo-app__items li p {
-  margin-right: .85rem;
-}
-
-.todo-app__items li button {
-  height: fit-content;
-  font-size: 0.55rem;
+.todo-app__name svg {
+  width: 30px;
+  height: 30px;
 }
