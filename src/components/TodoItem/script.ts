@@ -1,7 +1,12 @@
 import { defineComponent, ref } from 'vue'
+import * as Icon from '@/assets/icons'
 
 export default defineComponent({
   name: 'TodoItem',
+
+  components: {
+    CloseIcon: Icon.Cross
+  },
 
   props: {
     value: String,

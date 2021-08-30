@@ -16,4 +16,11 @@
 .todo-app__items li button {
   height: fit-content;
   font-size: 0.55rem;
+  background-color: transparent;
+  border: none;
+}
+
+.todo-app__items li button svg {
+  width: 18px;
+  height: 18px;
 }

@@ -3,7 +3,7 @@
     <!-- View -->
     <template v-if="!isEditMode">
       <p @dblclick="toggleEditMode">{{ value }}</p>
-      <button @click="remove">X</button>
+      <button @click="remove"><close-icon /></button>
     </template>
 
     <!-- Edit -->
