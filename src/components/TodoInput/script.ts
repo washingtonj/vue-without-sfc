@@ -17,7 +17,7 @@ export default defineComponent({
         completed: false
       }
 
-      value.value.length < 0
+      value.value.length <= 0
         ? alert('insert a value to create')
         : ctx.emit('create', newTodo)
 
