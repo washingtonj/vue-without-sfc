@@ -11,6 +11,12 @@
   box-shadow: var(--shadow);
 }
 
+.todo-app__table ul > div {
+  padding: 1rem;
+  font-size: 0.85rem;
+  color: var(--blue-300);
+}
+
 .todo-app__table ul {
   flex: 1;
   overflow: auto;

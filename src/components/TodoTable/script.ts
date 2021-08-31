@@ -9,6 +9,12 @@ export default defineComponent({
       type: Number,
       required: true,
       default: 0
+    },
+
+    isEmpty: {
+      type: Boolean,
+      requied: false,
+      default: false
     }
   },
 

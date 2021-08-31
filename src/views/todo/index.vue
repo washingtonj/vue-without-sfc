@@ -10,6 +10,7 @@
 
       <todo-table
         :total="todos.active.length"
+        :isEmpty="!todos[filterBy].length"
         @filter="filter"
         @clear="clearCompleted"
       >

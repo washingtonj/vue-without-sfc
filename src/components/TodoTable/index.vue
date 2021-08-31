@@ -1,7 +1,21 @@
 <template>
   <div class="todo-app__table">
     <ul>
-      <slot />
+      <!-- Without items -->
+      <div class="empty" v-if="isEmpty">
+        <p v-if="selected === 'all'">
+          You haven't created any items yet.
+        </p>
+        <p v-else-if="selected === 'completed'">
+          You haven't completed any tasks yet.
+        </p>
+        <p v-else-if="selected === 'active'">
+          You don't have any active tasks yet.
+        </p>
+      </div>
+
+      <!-- With Items -->
+      <slot v-else />
     </ul>
 
     <div class="todo-app__filter">
