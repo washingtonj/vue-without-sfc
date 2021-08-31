@@ -1,6 +1,6 @@
 <template>
   <li class="todo-app__item">
-    <input type="checkbox" @change="complete" />
+    <input type="checkbox" :checked="completed" @change="complete" />
 
     <!-- View -->
     <template v-if="!isEditMode">

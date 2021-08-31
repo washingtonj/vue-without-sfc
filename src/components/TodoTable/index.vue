@@ -5,15 +5,29 @@
     </ul>
 
     <div class="todo-app__filter">
-      <p>5 items left</p>
+      <p>{{ total }} items left</p>
       <div>
-        <button>All</button>
-        <button>Active</button>
-        <button>Completed</button>
+        <button
+          :class="{ selected: selected === 'all' }"
+          @click="filter('all')"
+        >
+          All
+        </button>
+        <button
+          :class="{ selected: selected === 'active' }"
+          @click="filter('active')"
+        >
+          Active
+        </button>
+        <button
+          :class="{ selected: selected === 'completed' }"
+          @click="filter('completed')"
+        >
+          Completed
+        </button>
       </div>
-      <button>Clear completed</button>
+      <button @click="clear">Clear completed</button>
     </div>
-
   </div>
 </template>
 

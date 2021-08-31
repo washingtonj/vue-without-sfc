@@ -1,5 +1,36 @@
-import { defineComponent } from 'vue'
+import { defineComponent, ref } from 'vue'
+import filterBy from '@/types/filter'
 
 export default defineComponent({
-  name: 'TodoTable'
+  name: 'TodoTable',
+
+  props: {
+    total: {
+      type: Number,
+      required: true,
+      default: 0
+    }
+  },
+
+  emits: ['filter', 'clear'],
+
+  setup (props, ctx) {
+    const selected = ref<filterBy>('all')
+
+    function filter (by: filterBy) {
+      ctx.emit('filter', by)
+      selected.value = by
+    }
+
+    function clear () {
+      ctx.emit('clear')
+    }
+
+    return {
+      selected,
+      filter,
+      clear
+    }
+  }
+
 })

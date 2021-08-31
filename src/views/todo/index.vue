@@ -8,10 +8,14 @@
 
       <todo-input @create="add" />
 
-      <todo-table>
+      <todo-table
+        :total="todos.active.length"
+        @filter="filter"
+        @clear="clearCompleted"
+      >
         <todo-item
-          v-for="(todo, idx) in todos"
-          :key="idx"
+          v-for="todo in todos[filterBy]"
+          :key="todo.id"
           :value="todo.title"
           :completed="todo.completed"
           @update="update(todo.id, $event)"

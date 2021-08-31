@@ -1,10 +1,11 @@
 .todo-app__input {
   display: flex;
-  height: 2.5rem;
+  height: 3rem;
   background-color: white;
   border-radius: 4px;
   padding: 5px 5px 5px 10px;
   margin-bottom: 1.25rem;
+  box-shadow: var(--shadow);
 }
 
 .todo-app__input input {
