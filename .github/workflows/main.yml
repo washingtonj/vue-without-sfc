@@ -12,15 +12,12 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
-      
-      - env: 
-        REPOSITORY_NAME: 'vue-without-sfc'
 
       - name: Pre
         run: npm install  
       
       - name: Build 
-        run: VUE_APP_PATH=/${{ REPOSITORY_NAME }}/ npm run build
+        run: VUE_APP_PATH=/vue-without-sfc/ npm run build
 
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@4.1.4
