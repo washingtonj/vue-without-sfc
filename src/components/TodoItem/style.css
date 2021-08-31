@@ -1,4 +1,4 @@
-.todo-app__items li {
+.todo-app__item {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -9,41 +9,41 @@
   padding: 1rem;
 }
 
-.todo-app__items li:not(:last-child) {
+.todo-app__item:not(:last-child) {
   border-bottom: 1px solid var(--blue-100);
 }
 
-.todo-app__items li p {
+.todo-app__item p {
   flex: 1;
   margin-right: .85rem;
   color: var(--blue-400);
 }
 
-.todo-app__items li .completed {
+.todo-app__item .completed {
   text-decoration: line-through;
 }
 
-.todo-app__items li input[type="checkbox"] {
+.todo-app__item input[type="checkbox"] {
   width: fit-content;
   margin-right: 1rem;
   cursor: pointer;
 }
 
-.todo-app__items li button {
+.todo-app__item button {
   height: fit-content;
   font-size: 0.55rem;
   background-color: transparent;
   border: none;
 }
 
-.todo-app__items li button svg {
+.todo-app__item button svg {
   width: 18px;
   height: 18px;
   stroke: var(--blue-400);
   fill: var(--blue-400);
 }
 
-.todo-app__items li input {
+.todo-app__item input {
   width: 90%;
   border: none;
   outline: none;

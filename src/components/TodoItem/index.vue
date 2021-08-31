@@ -1,5 +1,5 @@
 <template>
-  <li>
+  <li class="todo-app__item">
     <input type="checkbox" @change="complete" />
 
     <!-- View -->

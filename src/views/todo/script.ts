@@ -6,7 +6,7 @@ import TodoType from '@/types/todo'
 
 import TodoItem from '@/components/TodoItem/index.vue'
 import TodoInput from '@/components/TodoInput/index.vue'
-import TodoContainer from '@/components/TodoContainer/index.vue'
+import TodoTable from '@/components/TodoTable/index.vue'
 
 export default defineComponent({
   name: 'TodoApp',
@@ -14,7 +14,7 @@ export default defineComponent({
   components: {
     TodoItem,
     TodoInput,
-    TodoContainer,
+    TodoTable,
     DarkIcon: MoonIcon,
     LightIcon: SunIcon
   },

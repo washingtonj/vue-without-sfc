@@ -1,4 +1,4 @@
-.todo-app__items {
+.todo-app__table {
   display: flex;
   flex-direction: column;
 
@@ -11,7 +11,7 @@
   box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
 }
 
-.todo-app__items ul {
+.todo-app__table ul {
   flex: 1;
   overflow: auto;
 }

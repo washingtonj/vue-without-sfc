@@ -1,5 +1,5 @@
 <template>
-  <div class="todo-app__items">
+  <div class="todo-app__table">
     <ul>
       <slot />
     </ul>

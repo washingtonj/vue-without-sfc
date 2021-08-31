@@ -8,7 +8,7 @@
 
       <todo-input @create="add" />
 
-      <todo-container>
+      <todo-table>
         <todo-item
           v-for="(todo, idx) in todos"
           :key="idx"
@@ -18,7 +18,7 @@
           @remove="remove(todo.id)"
           @complete="check(todo.id)"
         />
-      </todo-container>
+      </todo-table>
     </div>
   </section>
 </template>
