@@ -1,11 +1,12 @@
 import { defineComponent, ref } from 'vue'
-import * as Icon from '@/assets/icons'
+import { XIcon, CheckIcon } from '@heroicons/vue/solid'
 
 export default defineComponent({
   name: 'TodoItem',
 
   components: {
-    CloseIcon: Icon.Cross
+    CloseIcon: XIcon,
+    SaveIcon: CheckIcon
   },
 
   props: {

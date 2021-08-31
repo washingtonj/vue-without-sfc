@@ -9,7 +9,7 @@
     <!-- Edit -->
     <template v-else>
       <input type="text" v-model="inputValue" />
-      <button @click="update">O</button>
+      <button @click="update"><save-icon /></button>
     </template>
   </li>
 </template>

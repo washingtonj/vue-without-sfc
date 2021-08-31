@@ -23,4 +23,6 @@
 .todo-app__items li button svg {
   width: 18px;
   height: 18px;
+  stroke: var(--blue-400);
+  fill: var(--blue-400);
 }

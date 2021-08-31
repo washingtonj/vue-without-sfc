@@ -1,6 +1,6 @@
 /* eslint-disable brace-style */
 import { defineComponent, ref } from 'vue'
-import * as Icons from '@/assets/icons'
+import { MoonIcon, SunIcon } from '@heroicons/vue/solid'
 
 import TodoItem from '@/components/TodoItem/index.vue'
 import TodoInput from '@/components/TodoInput/index.vue'
@@ -13,8 +13,8 @@ export default defineComponent({
     TodoItem,
     TodoInput,
     TodoContainer,
-    DarkIcon: Icons.Moon,
-    LightIcon: Icons.Sun
+    DarkIcon: MoonIcon,
+    LightIcon: SunIcon
   },
 
   setup () {
