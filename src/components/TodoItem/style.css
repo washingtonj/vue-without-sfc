@@ -3,9 +3,12 @@
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  height: fit-content;
+  height: max-content;
   padding: 1rem;
-  border-bottom: 1px solid var(--blue-200);
+}
+
+.todo-app__items li:not(:last-child) {
+  border-bottom: 1px solid var(--blue-100);
 }
 
 .todo-app__items li p {
@@ -25,4 +28,13 @@
   height: 18px;
   stroke: var(--blue-400);
   fill: var(--blue-400);
+}
+
+.todo-app__items li input {
+  width: 90%;
+  border: none;
+  outline: none;
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 1rem;
+
 }
