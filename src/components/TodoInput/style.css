@@ -16,6 +16,10 @@
   margin-right: 10px;
 }
 
+.todo-app__input ::placeholder {
+  color: var(--blue-300);
+}
+
 .todo-app__input button {
   width: 2rem;
   border: none;

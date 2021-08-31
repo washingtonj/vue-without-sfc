@@ -3,7 +3,7 @@
     <div class="todo-app__container">
       <div class="todo-app__name">
         <h1>TODO</h1>
-        <dark-icon />
+        <button><dark-icon /></button>
       </div>
 
       <todo-input @create="add" />
