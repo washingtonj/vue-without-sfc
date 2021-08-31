@@ -1,8 +1,12 @@
 <template>
   <li>
+    <input type="checkbox" @change="complete" />
+
     <!-- View -->
     <template v-if="!isEditMode">
-      <p @dblclick="toggleEditMode">{{ value }}</p>
+      <p :class="{ completed: completed }" @dblclick="toggleEditMode">
+        {{ value }}
+      </p>
       <button @click="remove"><close-icon /></button>
     </template>
 

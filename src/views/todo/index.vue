@@ -6,15 +6,17 @@
         <dark-icon />
       </div>
 
-      <todo-input @submit="add" />
+      <todo-input @create="add" />
 
       <todo-container>
         <todo-item
           v-for="(todo, idx) in todos"
           :key="idx"
-          :value="todo"
-          @update="update(idx, $event)"
-          @remove="remove(idx)"
+          :value="todo.title"
+          :completed="todo.completed"
+          @update="update(todo.id, $event)"
+          @remove="remove(todo.id)"
+          @complete="check(todo.id)"
         />
       </todo-container>
     </div>

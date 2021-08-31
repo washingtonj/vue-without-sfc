@@ -11,10 +11,10 @@ export default defineComponent({
 
   props: {
     value: String,
-    id: [Number, String]
+    completed: Boolean
   },
 
-  emits: ['remove', 'update'],
+  emits: ['remove', 'update', 'complete'],
 
   setup (props, ctx) {
     const isEditMode = ref<boolean>(false)
@@ -30,7 +30,11 @@ export default defineComponent({
     }
 
     function remove () {
-      ctx.emit('remove', props.id)
+      ctx.emit('remove')
+    }
+
+    function complete () {
+      ctx.emit('complete')
     }
 
     return {
@@ -38,7 +42,8 @@ export default defineComponent({
       inputValue,
       toggleEditMode,
       update,
-      remove
+      remove,
+      complete
     }
   }
 

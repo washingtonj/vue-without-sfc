@@ -2,8 +2,10 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  
   width: 100%;
   height: max-content;
+  
   padding: 1rem;
 }
 
@@ -12,8 +14,19 @@
 }
 
 .todo-app__items li p {
+  flex: 1;
   margin-right: .85rem;
   color: var(--blue-400);
+}
+
+.todo-app__items li .completed {
+  text-decoration: line-through;
+}
+
+.todo-app__items li input[type="checkbox"] {
+  width: fit-content;
+  margin-right: 1rem;
+  cursor: pointer;
 }
 
 .todo-app__items li button {
