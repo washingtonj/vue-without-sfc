@@ -11,6 +11,15 @@
   --blue-300: hsl(236, 9%, 61%);
   --blue-400: hsl(235, 19%, 35%);
 
+  /* Dark Theme */
+  --dark-blue-100: hsl(236, 33%, 92%);
+  --dark-blue-200: hsl(234, 39%, 85%);
+  --dark-blue-300: hsl(234, 11%, 52%);
+  --dark-blue-400: hsl(233, 14%, 35%);
+  --dark-blue-500: hsl(237, 14%, 26%);
+  --dark-blue-600: hsl(235, 24%, 19%);
+  --dark-blue-700: hsl(235, 21%, 11%);
+
   --mobile: 375px;
   --desktop: 1440px;
 
@@ -30,12 +39,20 @@ body {
   background-color: var(--gray);
 }
 
+.dark {
+  background-color: var(--dark-blue-700) !important;
+}
+
 button {
   cursor: pointer;
 }
 
 input {
   font-family: 'Josefin Sans', sans-serif;
+}
+
+.dark .todo-app {
+  background-image: url('../../assets//images/bg-desktop-dark.jpg');
 }
 
 .todo-app {

@@ -13,14 +13,23 @@
   border-bottom: 1px solid var(--blue-100);
 }
 
+.dark .todo-app__item:not(:last-child) {
+  border-color: var(--dark-blue-500);
+}
+
 .todo-app__item p {
   flex: 1;
   margin-right: .85rem;
   color: var(--blue-400);
 }
 
+.dark .todo-app__item p {
+  color: var(--dark-blue-200);
+}
+
 .todo-app__item .completed {
   text-decoration: line-through;
+  color: var(--blue-200);
 }
 
 .todo-app__item input[type="checkbox"] {
@@ -41,6 +50,12 @@
   height: 18px;
   stroke: var(--blue-400);
   fill: var(--blue-400);
+  transition: 1s;
+}
+
+.dark .todo-app__item button:hover svg {
+  transition: 1s;
+  fill: var(--dark-blue-200);
 }
 
 .todo-app__item input {
@@ -48,4 +63,9 @@
   border: none;
   outline: none;
   font-size: 1rem;
+}
+
+.dark .todo-app__item input {
+  background-color: transparent;
+  color: var(--dark-blue-300);
 }

@@ -11,11 +11,19 @@
   box-shadow: var(--shadow);
 }
 
+.dark .todo-app__table {
+  background-color: var(--dark-blue-600);
+}
+
 .todo-app__table .empty {
   padding: 1rem;
   font-size: 0.85rem;
   color: var(--blue-300);
   height: 100%;
+}
+
+.dark .todo-app__table .empty {
+  color: var(--dark-blue-400);
 }
 
 .todo-app__table ul {
@@ -31,7 +39,11 @@
 
   color: var(--blue-300);
   border-top: 1px solid var(--blue-100);
+}
 
+.dark .todo-app__filter {
+  color: var(--dark-blue-400);
+  border-color: var(--dark-blue-500);
 }
 
 .todo-app__filter p {
@@ -45,12 +57,23 @@
   font-weight: bold;
   font-size: .70rem;
   transition: 1s ease-out;
-
 }
 
-.todo-app__filter button:hover {
+.dark .todo-app__filter button  {
+  color: var(--dark-blue-300);
+}
+
+.dark .todo-app__filter .clear {
+  color: var(--dark-blue-400);
+}
+
+.todo-app__filter button:not(.selected):hover {
   transition: 1s ease-in;
   color: var(--blue-400);
+}
+
+.dark .todo-app__filter button:not(.selected):hover {
+  color: var(--dark-blue-200);
 }
 
 .todo-app__filter > div button:not(:last-child) {
@@ -58,5 +81,5 @@
 }
 
 .todo-app__filter > div .selected {
-  color: var(--blue-400);
+  color: var(--primary);
 }

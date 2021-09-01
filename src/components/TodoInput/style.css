@@ -8,16 +8,29 @@
   box-shadow: var(--shadow);
 }
 
+.dark .todo-app__input {
+  background-color: var(--dark-blue-600);
+}
+
 .todo-app__input input {
   flex: 1;
   border: none;
   outline: none;
   font-size: 1rem;
   margin-right: 10px;
+  background-color: transparent;
+}
+
+.dark .todo-app__input input {
+  color: var(--dark-blue-100);
 }
 
 .todo-app__input ::placeholder {
   color: var(--blue-300);
+}
+
+.dark .todo-app__input ::placeholder {
+  color: var(--dark-blue-500);
 }
 
 .todo-app__input button {
@@ -25,4 +38,9 @@
   border: none;
   font-weight: bold;
   border-radius: 4px;
+}
+
+.dark .todo-app__input button {
+  background-color: var(--primary);
+  color: var(--dark-blue-100);
 }

@@ -35,7 +35,7 @@
           Completed
         </button>
       </div>
-      <button @click="$emit('clear')">Clear completed</button>
+      <button class="clear" @click="$emit('clear')">Clear completed</button>
     </div>
   </div>
 </template>
