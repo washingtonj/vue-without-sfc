@@ -1,9 +1,9 @@
 /* eslint-disable brace-style */
 import { defineComponent, ref } from 'vue'
-import { MoonIcon, SunIcon } from '@heroicons/vue/solid'
 
 import TodoType from '@/types/todo'
 
+import TodoTitle from '@/components/TodoTitle/index.vue'
 import TodoItem from '@/components/TodoItem/index.vue'
 import TodoInput from '@/components/TodoInput/index.vue'
 import TodoTable from '@/components/TodoTable/index.vue'
@@ -14,12 +14,11 @@ export default defineComponent({
   name: 'TodoApp',
 
   components: {
+    TodoTitle,
     TodoItem,
     TodoInput,
     TodoTable,
-    Draggable,
-    DarkIcon: MoonIcon,
-    LightIcon: SunIcon
+    Draggable
   },
 
   setup () {

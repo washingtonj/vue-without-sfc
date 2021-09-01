@@ -1,10 +1,7 @@
 <template>
   <section class="todo-app">
     <div class="todo-app__container">
-      <div class="todo-app__name">
-        <h1>TODO</h1>
-        <button><dark-icon /></button>
-      </div>
+      <todo-title />
 
       <todo-input @create="add" />
 
