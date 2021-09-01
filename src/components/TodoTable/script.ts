@@ -1,41 +1,34 @@
-import { defineComponent, ref } from 'vue'
-import filterBy from '@/types/filter'
+import { defineComponent, PropType, ref, computed, watch } from 'vue'
+
+import TodoType from '@/types/todo'
+import FilterType from '@/types/filter'
 
 export default defineComponent({
   name: 'TodoTable',
 
   props: {
-    total: {
-      type: Number,
-      required: true,
-      default: 0
-    },
-
-    isEmpty: {
-      type: Boolean,
-      requied: false,
-      default: false
+    data: {
+      type: Array as PropType<TodoType[]>,
+      required: true
     }
   },
 
-  emits: ['filter', 'clear'],
+  setup (props) {
+    const filter = ref<FilterType>('all')
 
-  setup (props, ctx) {
-    const selected = ref<filterBy>('all')
+    const todos = computed(() => ({
+      all: props.data,
+      completed: props.data.filter((todo) => todo.completed),
+      active: props.data.filter((todo) => !todo.completed)
+    }))
 
-    function filter (by: filterBy) {
-      ctx.emit('filter', by)
-      selected.value = by
-    }
-
-    function clear () {
-      ctx.emit('clear')
-    }
+    watch(props.data, () => {
+      filter.value = 'all'
+    })
 
     return {
-      selected,
-      filter,
-      clear
+      todos,
+      filter
     }
   }
 

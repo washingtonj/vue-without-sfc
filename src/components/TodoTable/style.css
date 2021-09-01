@@ -11,10 +11,11 @@
   box-shadow: var(--shadow);
 }
 
-.todo-app__table ul > div {
+.todo-app__table .empty {
   padding: 1rem;
   font-size: 0.85rem;
   color: var(--blue-300);
+  height: 100%;
 }
 
 .todo-app__table ul {

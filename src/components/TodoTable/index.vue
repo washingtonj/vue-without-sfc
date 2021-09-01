@@ -1,46 +1,41 @@
 <template>
   <div class="todo-app__table">
-    <ul>
-      <!-- Without items -->
-      <div class="empty" v-if="isEmpty">
-        <p v-if="selected === 'all'">
-          You haven't created any items yet.
-        </p>
-        <p v-else-if="selected === 'completed'">
-          You haven't completed any tasks yet.
-        </p>
-        <p v-else-if="selected === 'active'">
-          You don't have any active tasks yet.
-        </p>
-      </div>
+    <!-- Without items -->
+    <div class="empty" v-if="!todos[filter].length">
+      <p v-if="filter === 'all'">You haven't created any items yet.</p>
+      <p v-else-if="filter === 'completed'">
+        You haven't completed any tasks yet.
+      </p>
+      <p v-else-if="filter === 'active'">
+        You don't have any active tasks yet.
+      </p>
+    </div>
 
-      <!-- With Items -->
-      <slot v-else />
+    <!-- With Items -->
+    <ul>
+      <slot :todos="todos[filter]" :filter="filter !== 'all'" ></slot>
     </ul>
 
     <div class="todo-app__filter">
-      <p>{{ total }} items left</p>
+      <p>{{ todos["active"].length }} items left</p>
       <div>
-        <button
-          :class="{ selected: selected === 'all' }"
-          @click="filter('all')"
-        >
+        <button :class="{ selected: filter === 'all' }" @click="filter = 'all'">
           All
         </button>
         <button
-          :class="{ selected: selected === 'active' }"
-          @click="filter('active')"
+          :class="{ selected: filter === 'active' }"
+          @click="filter = 'active'"
         >
           Active
         </button>
         <button
-          :class="{ selected: selected === 'completed' }"
-          @click="filter('completed')"
+          :class="{ selected: filter === 'completed' }"
+          @click="filter = 'completed'"
         >
           Completed
         </button>
       </div>
-      <button @click="clear">Clear completed</button>
+      <button @click="$emit('clear')">Clear completed</button>
     </div>
   </div>
 </template>
