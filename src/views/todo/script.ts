@@ -26,7 +26,7 @@ export default defineComponent({
     const todos = ref<TodoType[]>([])
 
     function add (todo: TodoType) {
-      todos.value.push(todo)
+      todos.value = [todo, ...todos.value]
     }
 
     function remove (id: number) {
